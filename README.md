@@ -1,4 +1,4 @@
-# Akeremkaya Riset
+#Riset
 
 ## How do I install these formulae?
 
