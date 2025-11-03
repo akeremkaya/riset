@@ -5,9 +5,9 @@ class Riset < Formula
   homepage "https://github.com/eataturk/Wallpaper-Sunrise-Sunset"
   url "https://github.com/eataturk/Wallpaper-Sunrise-Sunset.git",
       using:    :git,
-      tag:      "v0.2.6",
-      revision: "7e6880cd2388ac9da06cb54e0f46418dd80feb52"
-  version "0.2.6"
+      tag:      "v0.2.9",
+      revision: "cd8567f84ddccf1f47e3f037ebd43b78804d7db2"
+  version "0.2.9"
   license "MIT"
 
   depends_on "python@3.12"
@@ -25,12 +25,17 @@ class Riset < Formula
   def install
     virtualenv_install_with_resources
     pkgshare.install "scripts", "assets"
+    chmod 0o555, Dir["#{pkgshare}/scripts/*.sh"]
+    ohai "Run 'riset post_install' to configure launch agents after installation."
   end
 
-  def post_install
-    ENV["RISET_SCRIPTS_DIR"] = (pkgshare/"scripts").to_s
-    ENV["RISET_PYTHON_BIN"] = (libexec/"bin/python").to_s
-    system bin/"riset", "post_install"
+  def caveats
+    <<~EOS
+      To finish setup, run:
+        riset post_install
+
+      This creates the launch agents that keep wallpapers in sync with sunrise/sunset.
+    EOS
   end
 
   test do
