@@ -17,11 +17,6 @@ class Riset < Formula
     sha256 "9b7c3b412e9e69d172cfb24be0e6addcc9f1bd01a28db8bebe66d75ccc533d88"
   end
 
-  resource "pytz" do
-    url "https://files.pythonhosted.org/packages/90/26/9f1f00a5d021fff16dee3de13d43e5e978f3d58928e129c3a62cf7eb9738/pytz-2024.1.tar.gz"
-    sha256 "2a29735ea9c18baf14b448846bde5a48030ed267578472d8955cd0e7443a9812"
-  end
-
   def install
     virtualenv_install_with_resources
     pkgshare.install "scripts", "assets"
