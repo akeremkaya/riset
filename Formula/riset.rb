@@ -5,8 +5,8 @@ class Riset < Formula
   homepage "https://github.com/eataturk/Wallpaper-Sunrise-Sunset"
   url "https://github.com/eataturk/Wallpaper-Sunrise-Sunset.git",
       using:    :git,
-      revision: "4be4071c8c53f8ead4d688d3ecd9355329b82aab"
-  version "0.2.15"
+      revision: "b828ac743e062d1e82b581271196c03f07bdaafc"
+  version "0.2.16"
   license "MIT"
 
   depends_on "python@3.12"
