@@ -36,4 +36,3 @@ class Riset < Formula
     assert_match version.to_s, shell_output("#{bin}/riset --version")
   end
 end
-gi
